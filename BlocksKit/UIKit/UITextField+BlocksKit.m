@@ -38,7 +38,7 @@
 	id realDelegate = self.realDelegate;
 	
 	if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-		return ret;
+		return;
 	}
 
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidBeginEditing:)])
@@ -70,7 +70,7 @@
 	id realDelegate = self.realDelegate;
 
 	if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
-		return ret;
+		return;
 	}
 
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldDidEndEditing:)])
@@ -118,6 +118,11 @@
 {
 	BOOL ret = YES;
 	id realDelegate = self.realDelegate;
+
+	if (realDelegate && [realDelegate isKindOfClass:NSClassFromString(@"UIEditUserWordController")]) {
+		return ret;
+	}
+	
 	if (realDelegate && [realDelegate respondsToSelector:@selector(textFieldShouldReturn:)])
 		ret = [realDelegate textFieldShouldReturn:textField];
 	BOOL (^block)(UITextField *) = [self blockImplementationForMethod:_cmd];
