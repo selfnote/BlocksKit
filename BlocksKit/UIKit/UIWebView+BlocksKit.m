@@ -64,17 +64,17 @@
 
 @dynamic bk_shouldStartLoadBlock, bk_didStartLoadBlock, bk_didFinishLoadBlock, bk_didFinishWithErrorBlock;
 
-+ (void)load
-{
-	@autoreleasepool {
-		[self bk_registerDynamicDelegate];
-		[self bk_linkDelegateMethods:@{
-			@"bk_shouldStartLoadBlock": @"webView:shouldStartLoadWithRequest:navigationType:",
-			@"bk_didStartLoadBlock": @"webViewDidStartLoad:",
-			@"bk_didFinishLoadBlock": @"webViewDidFinishLoad:",
-			@"bk_didFinishWithErrorBlock": @"webView:didFailLoadWithError:"
-		}];
-	}
-}
+// + (void)load
+// {
+// 	@autoreleasepool {
+// 		[self bk_registerDynamicDelegate];
+// 		[self bk_linkDelegateMethods:@{
+// 			@"bk_shouldStartLoadBlock": @"webView:shouldStartLoadWithRequest:navigationType:",
+// 			@"bk_didStartLoadBlock": @"webViewDidStartLoad:",
+// 			@"bk_didFinishLoadBlock": @"webViewDidFinishLoad:",
+// 			@"bk_didFinishWithErrorBlock": @"webView:didFailLoadWithError:"
+// 		}];
+// 	}
+// }
 
 @end
